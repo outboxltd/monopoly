@@ -1,6 +1,6 @@
 var Monopoly = {};
 Monopoly.allowRoll = true;
-Monopoly.moneyAtStart = 1000;
+Monopoly.moneyAtStart = 500;
 Monopoly.doubleCounter = 0;
 
 Monopoly.init = function () {
@@ -299,7 +299,7 @@ Monopoly.getNextCell = function (cell) {
     var currentCellId = parseInt(cell.attr("id").replace("cell", ""));
     var nextCellId = currentCellId + 1
     if (nextCellId > 40) {
-        console.log("YAY")
+        console.log("you passed the all the board YAY")
         Monopoly.handlePassedGo();
         nextCellId = 1;
     }
@@ -309,7 +309,7 @@ Monopoly.getNextCell = function (cell) {
 
 Monopoly.handlePassedGo = function () {
     var player = Monopoly.getCurrentPlayer();
-    Monopoly.updatePlayersMoney(player, Monopoly.moneyAtStart / 10);
+    Monopoly.updatePlayersMoney(player, Monopoly.moneyAtStart + 100);
 };
 
 
