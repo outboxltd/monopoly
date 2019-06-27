@@ -317,7 +317,7 @@ Monopoly.isValidInput = function (validate, value) {
     var isValid = false;
     switch (validate) {
         case "numofplayers":
-            if (value > 1 && value <= 4) {
+            if (value >= 1 && value <= 4) {
                 isValid = true;
             }
         // break;
