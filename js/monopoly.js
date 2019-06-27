@@ -42,7 +42,8 @@ Monopoly.getPlayersMoney = function (player) {
 
 Monopoly.updatePlayersMoney = function (player, amount) {
     var playersMoney = parseInt(player.attr("data-money"));
-    playersMoney -= amount;
+    playersMoney += amount;
+    // wtf ??
     if (playersMoney < 0) {
         alert("you are broke!")
     }
@@ -310,6 +311,8 @@ Monopoly.getNextCell = function (cell) {
 Monopoly.handlePassedGo = function () {
     var player = Monopoly.getCurrentPlayer();
     Monopoly.updatePlayersMoney(player, Monopoly.moneyAtStart + 100);
+
+    // wtf ???
 };
 
 
