@@ -40,12 +40,15 @@ Monopoly.getPlayersMoney = function (player) {
     return parseInt(player.attr("data-money"));
 };
 
+// more money
 Monopoly.updatePlayersMoney = function (player, amount) {
     var playersMoney = parseInt(player.attr("data-money"));
-    playersMoney += amount;
+    playersMoney -= amount;
     // wtf ??
     if (playersMoney < 0) {
         alert("you are broke!")
+        Monopoly.playSound("nomoney");
+    
     }
     player.attr("data-money", playersMoney);
     player.attr("title", player.attr("id") + ": $" + playersMoney);
@@ -333,6 +336,7 @@ Monopoly.isValidInput = function (validate, value) {
 
 }
 
+// You don't have enough money...
 Monopoly.showErrorMsg = function () {
     $(".popup-page .invalid-error").fadeTo(500, 1);
     setTimeout(function () {
