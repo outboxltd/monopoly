@@ -43,7 +43,7 @@ Monopoly.getPlayersMoney = function (player) {
 // more money
 Monopoly.updatePlayersMoney = function (player, amount) {
     var playersMoney = parseInt(player.attr("data-money"));
-    playersMoney -= amount;
+    playersMoney += amount;
     // wtf ??
     if (playersMoney < 0) {
         alert("you are broke!")
