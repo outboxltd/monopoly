@@ -162,7 +162,7 @@ Monopoly.handlePayRent = function (player, propertyCell) {
     popup.find("#amount-placeholder").text(currentRent);
     popup.find("button").unbind("click").bind("click", function () {
         var properyOwner = $(".player#" + properyOwnerId);
-        console.log(properyOwnerId)
+        console.log(properyOwnerId) // remove it 
         Monopoly.updatePlayersMoney(player, currentRent);
         Monopoly.updatePlayersMoney(properyOwner, -1 * currentRent);
         Monopoly.closeAndNextTurn();
@@ -194,7 +194,7 @@ Monopoly.handleChanceCard = function (player) {
         var currentBtn = $(this);
         var action = currentBtn.attr("data-action");
         var amount = currentBtn.attr("data-amount");
-        console.log("testing the action and amount " + action + " " + amount)
+        console.log("testing the action and amount " + action + " " + amount) // remove it 
         Monopoly.handleAction(player, action, amount);
     });
     Monopoly.showPopup("chance");
@@ -275,10 +275,10 @@ Monopoly.handleBuy = function (player, propertyCell, propertyCost) {
 
 
 Monopoly.handleAction = function (player, action, amount) {
-    console.log(action)
+    console.log(action) // remove it 
     switch (action) {
         case "move":
-            console.log(amount)
+            console.log(amount) // remove it 
             Monopoly.movePlayer(player, amount);
             break;
         case "pay":
@@ -313,7 +313,7 @@ Monopoly.getNextCell = function (cell) {
     var currentCellId = parseInt(cell.attr("id").replace("cell", ""));
     var nextCellId = currentCellId + 1
     if (nextCellId > 40) {
-        console.log("you passed the all the board YAY")
+        console.log("you passed the all the board YAY") // remove it 
         Monopoly.handlePassedGo();
         nextCellId = 1;
     }
