@@ -29,7 +29,7 @@ Monopoly.initDice = function () {
     });
 };
 
-// set the Current Player turn
+//  the Current Player turn
 Monopoly.getCurrentPlayer = function () {
     return $(".player.current-turn");
 };
@@ -69,6 +69,8 @@ Monopoly.rollDice = function () {
     $(".dice#dice2").attr("data-num", result2).find(".dice-dot.num" + result2).css("opacity", 1);
     if (result1 == result2) {
         Monopoly.doubleCounter++;
+        alert('double')
+        Monopoly.setNextPlayerTurn();
     }
     var currentPlayer = Monopoly.getCurrentPlayer();
     Monopoly.handleAction(currentPlayer, "move", result1 + result2);
