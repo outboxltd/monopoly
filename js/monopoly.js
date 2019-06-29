@@ -57,10 +57,11 @@ Monopoly.updatePlayersMoney = function (player, amount) {
 
 
 Monopoly.rollDice = function () {
+    // var result1 = prompt();
+    // var result2 = prompt();
     var result1 = Math.floor(Math.random() * 6) + 1;
     var result2 = Math.floor(Math.random() * 6) + 1;
-    // var result1 = 4 ;
-    // var result2 = 4;
+    // just for testing stuff
     $(".dice").find(".dice-dot").css("opacity", 0);
     $(".dice#dice1").attr("data-num", result1).find(".dice-dot.num" + result1).css("opacity", 1);
     $(".dice#dice2").attr("data-num", result2).find(".dice-dot.num" + result2).css("opacity", 1);
